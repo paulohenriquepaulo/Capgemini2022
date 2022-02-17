@@ -17,20 +17,11 @@ class EscadaServiceTest {
     @Test
     public void deveSubirExceptionCapgnimiExceptionQuandoQuantidadeForZero() {
         CapgeminiException capgnimiException =
-                assertThrows(CapgeminiException.class,() -> escadaService.escada(0) );
+                assertThrows(CapgeminiException.class, () -> escadaService.escada(0));
 
         assertNotNull(capgnimiException);
         assertEquals("O número precisar ser maior do que 0.",
                 capgnimiException.getErrors().get("erro"));
     }
-    @Test
-    public void deveSubirExceptionCapgnimiExceptionQuandoQuantidadeForNegativo() {
-        CapgeminiException capgnimiException =
-                assertThrows(CapgeminiException.class,() -> escadaService.escada(-1) );
-
-        assertNotNull(capgnimiException);
-        assertEquals("O número precisar positivo.",
-                capgnimiException.getErrors().get("erro"));
-    }
-
 }
+

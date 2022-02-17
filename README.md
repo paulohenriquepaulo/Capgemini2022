@@ -25,7 +25,7 @@ Na questão 01 criei duas camadas, camada controller e a camada service, na cama
 através do verbo @GetMapping passando como parâmetro “/Questão01”.
 E possível informar no swagger a quantidade para criação da escada, implementei no código também as camadas,
 advice é exeption “utilizei fora do pacote questão01 para las reutiliza nas outras duas questões”.
-Dessa forma consegui implantar no meu projeto (mensagens) de erro, caso no swagger fosse informado o número
+Dessa forma consegui implantar no meu projeto (mensagens) de erro, caso no swagger for informado o número
 zero ou números negativos. Implementei também os testes unitários utilizando junit 5.
 
 # Questão 02

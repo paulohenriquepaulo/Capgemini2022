@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 public class CadastroService {
     CapgeminiException ex = new CapgeminiException();
 
+    /**
+     * Método recebe um usuario com nome e senha
+     *
+     * @return String - caso a senha passe pela validação
+     * simulando o cadrasto efetuado com sucesso.
+     */
     public String fazerLodin(Usuario usuario) {
         String texto = null;
         if (senhaForte(usuario)) {

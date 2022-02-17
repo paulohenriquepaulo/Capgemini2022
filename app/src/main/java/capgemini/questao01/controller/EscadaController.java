@@ -11,8 +11,9 @@ public class EscadaController {
     @Autowired
     private EscadaService service;
 
+
     @GetMapping("/Questao01")
-    public StringBuilder converterNumero(int quantidade) {
-        return service.escada(quantidade);
+    public StringBuilder converterNumero(int tamanho) {
+        return service.escada(tamanho);
     }
 }
