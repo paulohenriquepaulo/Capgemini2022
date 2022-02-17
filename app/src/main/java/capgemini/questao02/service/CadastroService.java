@@ -22,6 +22,14 @@ public class CadastroService {
         return texto;
     }
 
+    /**
+     * Método recebe um usuario com nome e senha
+     *
+     * @return Boolean "true" - caso a senha atenda todos os
+     * criterios exigido para uma senha forte.
+     * caso não passe pelos criterios sobe uma exeption
+     * informando o que e necessario para uma senha forte.
+     */
     private Boolean senhaForte(Usuario usuario) {
         Boolean erro = Boolean.TRUE;
         Boolean sucesso = Boolean.TRUE;

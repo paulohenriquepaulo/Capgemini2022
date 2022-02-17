@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 public class EscadaService {
 
     /**
-     * Método recebe um int como tamanho para a escada,
+     * Método recebe um int com o tamanho para a escada,
      *
      * @return StringBuilder - contendo uma quantidade de " * "
      * senquencial e complentando com espaçoos vazios da primeira
-     * linha N até não conter mais espaços.
+     * linha, até não conter mais espaços.
      */
     public StringBuilder escada(int tamanho) {
         validarQuantidade(tamanho);
@@ -32,6 +32,12 @@ public class EscadaService {
         return escada;
     }
 
+    /**
+     * Método recebe um int com o tamanho para a escada,
+     *
+     * @return Boolean - informando true para senha valida é
+     * false para senha invalida.
+     */
     private Boolean validarQuantidade(int tamanho) {
         Boolean valido = Boolean.TRUE;
         CapgeminiException ex = new CapgeminiException();
