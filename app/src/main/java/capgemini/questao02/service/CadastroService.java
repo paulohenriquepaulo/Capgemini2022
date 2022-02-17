@@ -9,12 +9,12 @@ public class CadastroService {
     CapgeminiException ex = new CapgeminiException();
 
     /**
-     * Método recebe um usuario com nome e senha
+     * Método recebe um usuário.
      *
      * @return String - caso a senha passe pela validação
      * simulando o cadrasto efetuado com sucesso.
      */
-    public String fazerLodin(Usuario usuario) {
+    public String cadastrar(Usuario usuario) {
         String texto = null;
         if (senhaForte(usuario)) {
             texto = "Cadastro efetuado com sucesso.";
@@ -23,7 +23,7 @@ public class CadastroService {
     }
 
     /**
-     * Método recebe um usuario com nome e senha
+     * Método recebe um usuário.
      *
      * @return Boolean "true" - caso a senha atenda todos os
      * criterios exigido para uma senha forte.
@@ -81,12 +81,26 @@ public class CadastroService {
                 erro = Boolean.TRUE;
             }
         } else {
-            ex.add("erro", "Possui no mínimo 6 caracteres.");
+            ex.add("erro", "Possui no mínimo 6 caracteres. Falta "
+                    + verificarQuantidadeDigitos(usuario) + " caracteres");
             erro = Boolean.TRUE;
         }
         if (erro) {
             throw ex;
         }
         return sucesso;
+    }
+
+    /**
+     * Método recebe um usuário, é efetua o calculo de 6
+     * "quantidade mínima exigida para uma senha forte",
+     * menos tamanho da senha.
+     *
+     * @return Integer - sendo possível informa ao usuário
+     * a quantidade que falta de caracteres para uma senha forte
+     */
+    private Integer verificarQuantidadeDigitos(Usuario usuario) {
+        Integer faltaDigito = 6 - usuario.getSenha().length();
+        return faltaDigito;
     }
 }

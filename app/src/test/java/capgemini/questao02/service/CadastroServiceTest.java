@@ -16,10 +16,10 @@ class CadastroServiceTest {
     private CadastroService service;
 
     @Test
-    public void deveEfetuarLoginQuandoSenhaForForte() {
+    public void deveEfetuarCadastroQuandoSenhaForForte() {
         Usuario usuario = new Usuario();
         usuario.setSenha("T3stesenh@forte");
-        service.fazerLodin(usuario).equals("Cadastro efetuado com sucesso.");
+        service.cadastrar(usuario).equals("Cadastro efetuado com sucesso.");
     }
 
     @Test
@@ -27,7 +27,7 @@ class CadastroServiceTest {
         Usuario usuario = new Usuario();
         usuario.setSenha("Senhaerrad@");
         CapgeminiException capgnimiException =
-                assertThrows(CapgeminiException.class, () -> service.fazerLodin(usuario));
+                assertThrows(CapgeminiException.class, () -> service.cadastrar(usuario));
 
         assertNotNull(capgnimiException);
         assertEquals("Contém no mínimo 1 digito númerico",
@@ -39,7 +39,7 @@ class CadastroServiceTest {
         Usuario usuario = new Usuario();
         usuario.setSenha("senha3rrad@");
         CapgeminiException capgnimiException =
-                assertThrows(CapgeminiException.class, () -> service.fazerLodin(usuario));
+                assertThrows(CapgeminiException.class, () -> service.cadastrar(usuario));
 
         assertNotNull(capgnimiException);
         assertEquals("Contém no mínimo 1 letra em maiúsculo.",
@@ -51,7 +51,7 @@ class CadastroServiceTest {
         Usuario usuario = new Usuario();
         usuario.setSenha("SENH@3ERRADA");
         CapgeminiException capgnimiException =
-                assertThrows(CapgeminiException.class, () -> service.fazerLodin(usuario));
+                assertThrows(CapgeminiException.class, () -> service.cadastrar(usuario));
 
         assertNotNull(capgnimiException);
         assertEquals("Contém no mínimo 1 letra em minúsculo.",
@@ -63,7 +63,7 @@ class CadastroServiceTest {
         Usuario usuario = new Usuario();
         usuario.setSenha("Senha3rrada");
         CapgeminiException capgnimiException =
-                assertThrows(CapgeminiException.class, () -> service.fazerLodin(usuario));
+                assertThrows(CapgeminiException.class, () -> service.cadastrar(usuario));
 
         assertNotNull(capgnimiException);
         assertEquals("Contém no mínimo 1 caractere especial. Os caracteres especiais são: !@#$%^&*()-+.",
@@ -75,10 +75,10 @@ class CadastroServiceTest {
         Usuario usuario = new Usuario();
         usuario.setSenha("S3nh@");
         CapgeminiException capgnimiException =
-                assertThrows(CapgeminiException.class, () -> service.fazerLodin(usuario));
+                assertThrows(CapgeminiException.class, () -> service.cadastrar(usuario));
 
         assertNotNull(capgnimiException);
-        assertEquals("Possui no mínimo 6 caracteres.",
+        assertEquals("Possui no mínimo 6 caracteres. Falta 1 caracteres",
                 capgnimiException.getErrors().get("erro"));
     }
 }

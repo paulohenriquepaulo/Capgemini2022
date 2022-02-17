@@ -23,5 +23,11 @@ class EscadaServiceTest {
         assertEquals("O número precisar ser maior do que 0.",
                 capgnimiException.getErrors().get("erro"));
     }
+
+    @Test
+    public void deveRetornaUmStringBuilderQuandoNumeroForMaiorQueZero() {
+        escadaService.escada(2).equals(" *\n**");
+
+    }
 }
 

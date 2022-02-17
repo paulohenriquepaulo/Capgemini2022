@@ -17,6 +17,6 @@ public class Cadastro {
         Usuario usuario = new Usuario();
         usuario.setNome(nome);
         usuario.setSenha(senha);
-        return service.fazerLodin(usuario);
+        return service.cadastrar(usuario);
     }
 }
