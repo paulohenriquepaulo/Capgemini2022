@@ -1,15 +1,17 @@
 package capgemini.questao03.service;
 
+import capgemini.exception.CapgeminiException;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 @Service
 public class AnagramaService {
 
     public Integer calcularAnagramas(String palavra) {
-        Set<String> anagramas = new HashSet<>();
+        Boolean valido = Boolean.TRUE;
+        ArrayList<String> anagramas = new ArrayList<String>();
         for (int i = 0; i < palavra.length(); i++) {
             for (int j = 1; j < palavra.length(); j++) {
                 if (palavra.charAt(i) == palavra.charAt(j) && i != j && i < j) {
@@ -24,6 +26,11 @@ public class AnagramaService {
                     }
                 }
             }
+        }
+        if (anagramas.size() == 0) {
+            CapgeminiException ex = new CapgeminiException();
+            ex.add("erro", "Esta palavra não contem anagramas pares.");
+            throw ex;
         }
         return anagramas.size();
     }
