@@ -92,9 +92,11 @@ public class CadastroService {
     }
 
     /**
-     * Método recebe um usuário, é efetua o calculo de 6
-     * "quantidade mínima exigida para uma senha forte",
-     * menos tamanho da senha.
+     * Caso a senha informada seja menor que quantidade
+     * minima exigida de caracteres,
+     * este metodo faz um calculo subitraindo o
+     * valor informado pela quantidade minima
+     * de caracteres para uma senha forte
      *
      * @return Integer - sendo possível informa ao usuário
      * a quantidade que falta de caracteres para uma senha forte
