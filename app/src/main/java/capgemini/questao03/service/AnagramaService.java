@@ -9,8 +9,15 @@ import java.util.Arrays;
 @Service
 public class AnagramaService {
 
+    /**
+     * Método recebe uma String e verifica a parti dessa String
+     * quantos anagramas pares podem ser formados.
+     *
+     * @return Integer - mostrando a quantidade de anagramas
+     * pares podem ser formados a partir da palavra passada como
+     * parâmetro
+     */
     public Integer calcularAnagramas(String palavra) {
-        Boolean valido = Boolean.TRUE;
         ArrayList<String> anagramas = new ArrayList<String>();
         for (int i = 0; i < palavra.length(); i++) {
             for (int j = 1; j < palavra.length(); j++) {
@@ -19,10 +26,10 @@ public class AnagramaService {
                         String x = palavra.substring(i, i + 1);
                         anagramas.add(ordenarTrecho(x));
                     } else {
-                        String y = palavra.substring(i, j);
-                        String h = palavra.substring(i, i + 1);
-                        anagramas.add(ordenarTrecho(h));
-                        anagramas.add(ordenarTrecho(y));
+                        String p = palavra.substring(i, j);
+                        String a = palavra.substring(i, i + 1);
+                        anagramas.add(ordenarTrecho(a));
+                        anagramas.add(ordenarTrecho(p));
                     }
                 }
             }

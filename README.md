@@ -36,3 +36,12 @@ senha, fazendo uma simulação de um cadastro de uma rede social, caso a senha n
 critérios exigidos, retorna um erro informando o que é necessário na senha para ser uma senha forte,
 caso a senha informada passe por todos os critérios exigidos, retorno uma string “Cadastro efetuado com sucesso”,
 simulando que a conta foi criada na rede social.Implementeii também os testes unitário utilizando junit 5.
+
+# Questão 03
+
+Na questão 03 criei duas camadas, camada controller e a camada service, na camada controller
+através do verbo @GetMapping passando como parâmetro “/Questão03”.
+E possível informar no swagger a palavra para fazer os cálculos dos anagramas, desta forma
+podendo retorna um inteiro mostrando a quantidade de anagramas pares que a palavra contem,
+caso a palavra não contenha anagramas pares, retorna uma mensagem de erro. Implementei os teste
+unitários utilizando junit 5.
