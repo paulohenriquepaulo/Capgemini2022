@@ -11,7 +11,7 @@ public class AnagramaController {
     @Autowired
     AnagramaService service;
 
-    @GetMapping("/Questão03")
+    @GetMapping("/Questao03")
     public Integer cadrastroUsuario(String palavra) {
         return service.calcularAnagramas(palavra);
     }

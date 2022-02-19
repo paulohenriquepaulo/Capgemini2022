@@ -12,7 +12,7 @@ public class CadastroController {
     @Autowired
     CadastroService service;
 
-    @GetMapping("/Questão02")
+    @GetMapping("/Questao02")
     public String cadrastroUsuario(String nome, String senha) {
         Usuario usuario = new Usuario();
         usuario.setNome(nome);
