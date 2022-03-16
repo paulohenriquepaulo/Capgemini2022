@@ -1,7 +1,8 @@
 package capgemini.questao02.service;
 
+import capgemini.desafio.service.CadastroService;
 import capgemini.exception.CapgeminiException;
-import capgemini.questao02.model.Usuario;
+import capgemini.desafio.model.Usuario;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

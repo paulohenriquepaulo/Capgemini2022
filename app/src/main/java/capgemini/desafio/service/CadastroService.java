@@ -1,7 +1,7 @@
-package capgemini.questao02.service;
+package capgemini.desafio.service;
 
 import capgemini.exception.CapgeminiException;
-import capgemini.questao02.model.Usuario;
+import capgemini.desafio.model.Usuario;
 import org.springframework.stereotype.Service;
 
 @Service

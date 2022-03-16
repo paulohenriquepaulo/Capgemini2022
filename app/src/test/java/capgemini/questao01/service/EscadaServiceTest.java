@@ -1,5 +1,6 @@
 package capgemini.questao01.service;
 
+import capgemini.desafio.service.EscadaService;
 import capgemini.exception.CapgeminiException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,4 +1,4 @@
-package capgemini.questao01.service;
+package capgemini.desafio.service;
 
 import capgemini.exception.CapgeminiException;
 import org.springframework.stereotype.Service;

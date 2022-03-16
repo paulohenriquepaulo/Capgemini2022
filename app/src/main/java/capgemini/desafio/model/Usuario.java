@@ -1,4 +1,4 @@
-package capgemini.questao02.model;
+package capgemini.desafio.model;
 
 public class Usuario {
 
